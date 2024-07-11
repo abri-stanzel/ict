@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABRI STANZEL CONTACT US</title>
+  <link rel="stylesheet" href="CONTACT.css">
+</head>
+<body>
+   <a href="index.html">
+    <img class="logo" src="LOGO2.png" alt="logo">
+   </a>
+
+    <section class="contact-section">
+      <div class="contact-bg">
+        <h2>Contact Us</h2>
+        <div class="line">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <p class="text">For more information about ABRI STANZEL</p>
+      </div>
+
+      <div class="contact-body">
+        <div class="contact-info">
+          <div>
+            <span><i class="fas fa-mobile-alt"></i></span>
+            <span onclick="navigateToLink1()">Phone No.</span>
+            <span class="text" onclick="navigateToLink1()">+62 877 7717 5006</span>
+          </div>
+          <div>
+            <span><i class="fas fa-envelope-open"></i></span>
+            <span onclick="navigateToLink2()">E-mail</span>
+            <span class="text">abristanzel9@gmail.com</span>
+          </div>
+          <div>
+            <span><i class="fas fa-map-marker-alt"></i></span>
+            <span onclick="navigateToLink3()">Address</span>
+            <span class="text" onclick="navigateToLink3()">SMAN 9 KOTA TANGERANG SELATAN</span>
+            <span class="text" onclick="navigateToLink3()">Jl. Hidup Baru No.31 Serua Raya, Ciputat, Tangerang Selatan, Banten, Indonesia.</span>
+          </div>
+          <div>
+            <span><i class="fas fa-clock"></i></span>
+            <span onclick="navigateToLink4()">Instagram</span>
+            <span class="text" onclick="navigateToLink4()">@abristanzel</span>
+          </div>
+        </div>
+
+        <div class="contact-form">
+          <form>
+            <div>
+              <input type="text" id="Firstname" class="form-control" placeholder="First Name">
+              <input type="text" id="Lastname" class="form-control" placeholder="Last Name">
+            </div>
+            <div>
+              <input type="email" id="Email" class="form-control" placeholder="E-mail">
+              <input type="text" id="Phone" class="form-control" placeholder="Phone (+62857××××××××)">
+            </div>
+            <textarea rows="5" id="Massage" class="form-control" placeholder="Message" oninput="autoResize(this)"></textarea>
+            <button type="button" class="send-btn" onclick="sendwhatsapp();">Send Via WhatsApp</button>
+          </form>
+          <div>
+<a href="FORMULIR.html">
+    <img src="HP4.jpg" alt="logo">
+   </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="map">
+        <div style="text-decoration:none; overflow:hidden;max-width:100%;width:100%;height:400px;">
+          <div id="embed-map-canvas" style="height:400px ; width:100%;max-width:100%;">
+            <iframe style="height:400px ;width:100%;border:0;" frameborder="0" allowfullscreen="" aria-hidden="false" tabindex="0" src="https://www.google.com/maps/embed/v1/place?q=Sman+9+Tangerang+Selatan+&key=AIzaSyBFw0Qbyq9zTFTd-tUY6dZWTgaQzuU17R8"></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="row">
+          <div class="footer-col">
+            <a href="index.html">
+              <img class="logo1" src="LOGO3.png" alt="logo">
+            </a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function navigateToLink1() {
+        window.location.href = "https://wa.me/+6287777175006";
+      }
+
+      function navigateToLink2() {
+        window.location.href = "https://mail.google.com/mail/u/0/?view=cm&tf=1&fs=1&to=abristanzel9@gmail.com";
+      }
+
+      function navigateToLink3() {
+        window.location.href = "https://maps.app.goo.gl/TFmNbkf9kTDMV7Jc8";
+      }
+
+      function navigateToLink4() {
+        window.location.href = "https://www.instagram.com/abristanzel";
+      }
+
+      function autoResize(textarea) {
+        textarea.style.height = 'auto';
+        textarea.style.height = textarea.scrollHeight + 'px';
+      }
+
+      function sendwhatsapp() {
+        var phonenumber = "+6287777175006";
+
+        var Firstname = document.getElementById("Firstname").value;
+        var Lastname = document.getElementById("Lastname").value;
+        var Email = document.getElementById("Email").value;
+        var Phone = document.getElementById("Phone").value;
+        var Massage = document.getElementById("Massage").value;
+
+        var url = "https://wa.me/" + phonenumber + "?text="
+          + "*First Name:* " + Firstname + "%0a"
+          + "*Last Name:* " + Lastname + "%0a"
+          + "*E-mail:* " + Email + "%0a"
+          + "*Phone:* " + "https://wa.me/" + Phone + "%0a"
+          + "*Massage:* " + Massage + "%0a"
+
+        window.open(url, '_blank').focus();
+      }
+    </script>
+</body>
+</html>

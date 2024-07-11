@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PENDAFTARAN ABRI STANZEL GENERASI IX</title>
+  <link rel="stylesheet" href="FORMULIR.css">
+</head>
+<body>
+<a href="index.html">
+    <img class="logo" src="LOGO3.png" alt="logo">
+   </a>
+<h3 class="subjudul">PENDAFTARAN EKSTRAKULIKULER ABRI STANZEL GENERASI IX</h3>
+
+<form>
+  <a for="NamaLengkap" class="isian">Nama Lengkap</a>
+  <input type="text" id="NamaLengkap" class="NamaLengkap" placeholder="Alexander Abdul">
+  
+  <a for="NamaPanggilan" class="isian">Nama Panggilan</a>
+  <input type="text" id="NamaPanggilan" class="NamaPanggilan" placeholder="Abdul">
+  
+  <a class="isian">Jenis Kelamin</a>
+  <input type="radio" name="Kelamin" id="Lakilaki" value="Laki-laki" checked="checked">
+  <label for="Lakilaki">Laki-laki</label>
+  <input type="radio" name="Kelamin" id="Perempuan" value="Perempuan">
+  <label for="Perempuan">Perempuan</label>
+  
+  <a for="TempatTanggalLahir" class="isian">Tempat Tanggal Lahir</a>
+  <input type="text" id="TempatTanggalLahir" class="TempatTanggalLahir" placeholder="Jakarta, 31/12/2007">
+  
+  <a for="Kelas" class="isian">Kelas</a>
+  <input type="text" id="Kelas" class="Kelas" placeholder="X.2">
+  
+  <a for="AlamatRumah" class="isian">Alamat Rumah</a>
+  <textarea id="AlamatRumah" class="AlamatRumah" oninput="autoResize(this)" placeholder="Jl.Sukamulya No.7"></textarea>
+
+  <a for="Email" class="isian">Email</a>
+  <input type="email" id="Email" class="Email" placeholder="Alexander@gmail.com">
+  
+  <a for="NoWhatsApp" class="isian">No. WhatsApp</a>
+  <input type="number" id="NoWhatsApp" class="NoWhatsApp" placeholder="0857xxxxxxxx">
+  
+  <a for="Instagram" class="isian">Instagram</a>
+  <input type="text" id="Instagram" class="Instagram" placeholder="abristanzel">
+  
+  <a for="HobiKeahlian" class="isian">Hobi/Keahlian</a>
+  <textarea id="HobiKeahlian" class="HobiKeahlian" oninput="autoResize(this)"></textarea>
+  
+  <a for="AlasanBergabungEkskul" class="isian">Alasan Bergabung Ekskul</a>
+  <textarea id="AlasanBergabungEkskul" class="AlasanBergabungEkskul" oninput="autoResize(this)"></textarea>
+  
+  <button type="button" class="tombol" onclick="sendwhatsapp();">Kirim Via WhatsApp</button>
+</form>
+
+<script>
+  function autoResize(textarea) {
+  textarea.style.height = 'auto';
+  textarea.style.height = textarea.scrollHeight + 'px';
+  }
+  
+function sendwhatsapp() {
+  var phonenumber = "+6287777175006";
+
+  var NamaLengkap = document.querySelector(".NamaLengkap").value;
+  var NamaPanggilan = document.querySelector(".NamaPanggilan").value;
+  var Kelamin = document.querySelector('input[name="Kelamin"]:checked').value;
+  var TempatTanggalLahir = document.querySelector(".TempatTanggalLahir").value;
+  var Kelas = document.querySelector(".Kelas").value;
+  var AlamatRumah = document.querySelector(".AlamatRumah").value;
+  var Email = document.querySelector(".Email").value;
+  var NoWhatsApp = document.querySelector(".NoWhatsApp").value;
+  var Instagram = document.querySelector(".Instagram").value;
+  var HobiKeahlian = document.querySelector(".HobiKeahlian").value;
+  var AlasanBergabungEkskul = document.querySelector(".AlasanBergabungEkskul").value;
+
+  var url = "https://wa.me/" + phonenumber + "?text="
+    + "*PENDAFTARAN ABRI STANZEL GENERASI IX*" + "%0a"
+    + "*Nama Lengkap:* " + NamaLengkap + "%0a"
+    + "*Nama Panggilan:* " + NamaPanggilan + "%0a"
+    + "*Jenis Kelamin:* " + Kelamin + "%0a"
+    + "*Tempat Tanggal Lahir:* " + TempatTanggalLahir + "%0a"
+    + "*Kelas:* " + Kelas + "%0a"
+    + "*Alamat Rumah:* " + AlamatRumah + "%0a"
+    + "*Email:* " + Email + "%0a"
+    + "*No. WhatsApp:* " + "https://wa.me/" + NoWhatsApp + "%0a"
+    + "*Instagram:* " + "https://www.instagram.com/" + Instagram + "%0a"
+    + "*Hobi/Keahlian:* " + HobiKeahlian + "%0a"
+    + "*Alasan Bergabung Ekskul:* " + AlasanBergabungEkskul + "%0a";
+
+  window.open(url, '_blank').focus();
+}
+</script>
+
+<footer class="footer">
+  <div class="container">
+    <div class="row">
+      <div class="footer-col">
+        <a href="index.html">
+          <img class="logo1" src="LOGO3.png" alt="logo">
+        </a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
